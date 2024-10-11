@@ -1,0 +1,16 @@
+13.00 coke sakto
+20.00 coke mismo
+30.00 coke kasalo
+13.00 royal sakto
+20.00 royal mismo
+30.00 royal kasalo
+15.00 sprite sakto
+25.00 sprite mismo
+35.00 sprite kasalo
+14.00 pepsi sakto
+22.00 pepsi mismo
+32.00 pepsi kasalo
+12.00 mountain dew sakto
+18.00 mountain dew mismo
+28.00 mountain dew kasalo
+

@@ -1,0 +1,33 @@
+Example 2 : How to create table with same structure without data?
+
+Answer: Create table Student_Replica as Select * from Student where 1=2;
+-Due to the condition 1=2, the aforementioned query will construct the same table as student titled "Student Replica" without any data. The user can generate duplicate table structures without data by performing the aforementioned query because the condition 1=2 indicates True=False, which is always a False condition.
+
+Example 4 : How to fetch first 5 highest marks with Student table.
+Answer:select min(marks)from(select distinct marks from Student order by marks desc)where rownum<=5;
+-The rownum notion is used along with an inner view of marks in descending order from a student table.
+
+Example 6 : How to find the duplicate row count from specific table.
+Answer:Select Employee_no, count (Employee_no) from Employee Group by Employee_no Having count (Employee_no)>1 Order by count (Employee_no) desc;
+-In addition to grouping by and having, we also need to use the Count function. Additionally, you must employ order by clause.
+
+Example 8 : How user can display following structure with using single SQL Query.
+Answer:SELECT lpad (‘$’, ROWNUM,’$’) FROM Employee WHERE ROWNUM <4;
+-We are retrieving the dollar symbol using the lpad() function.
+
+Example 10 : How to fetch maximum salary of Employee and minimum salary of Employee together from Employee table.
+Answer:Select max (salary) from Employee Union Select min (salary) from Employee;
+- It requires the user to combine the results of two queries or components into a single result, is rather straightforward. Union set operator must be used by the user.
+
+Example 12 :How to fetch last record from Student table.
+Answer:Select * from Student where rowid = select max(rowid) from Student;
+-According to the rowid of the table, the records are saved in the table. Therefore, the user must retrieve as many rows as possible from the Student table.
+
+Example 14 : What is query to display odd records from Student table.
+Answer:Select * from(Select rownum as rno,S.* from Student S) where Mod(rno,2)=1;
+-To check out the odd entries from the table, the user must utilize the Rownum and Mod functions.
+
+Example 16 : How to find out manager name and employee name from same table.
+Answer:Select e.employee_name,m.employee name from Employee e,Employee m where e.Employee_id=m.Manager_id;
+-To retrieve the records from the table in this query, the user is utilizing a self join.
+A query that joins (compares) a table to itself is called a self-join. When comparing values in one column to other values in the same column in the same table, self-joins are employed. Getting running counts and running totals in a SQL query is one use case for self-joins. Create the comparison, rule out instances where a certain value would be identical to itself, and select from the same table that is specified twice with different aliases before writing the query.

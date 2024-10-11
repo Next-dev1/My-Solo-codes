@@ -1,0 +1,47 @@
+ import java.util.Locale;
+   import java.util.Scanner;
+
+
+   public class CountVowelsDigits {
+    
+   public static void main(String args[]){
+ 
+   int countVowels=0, 
+       countDigits=0;
+
+    Scanner scan=new Scanner(System.in); 
+    System.out.println("Enter a String \n");
+    
+
+    
+       String myString = scan.nextLine();
+          int strLength = myString.length();
+
+
+          for(int i = 0; i < strLength; i++) {
+              char currentChar = Character.toLowerCase(myString.charAt(i));
+
+          if(currentChar == 'a'|| currentChar == 'e'|| currentChar == 'i'|| currentChar == 'o'|| currentChar == 'u') {
+                       
+          countVowels++; //--vOWELS--//
+    }
+    
+          else if(currentChar >= '0' && currentChar <= '9') {  //--DIGITS--//
+                  countDigits++;
+        
+    }
+}
+
+
+           System.out.println("String Yoe Entered: "+ myString);
+    
+                 System.out.println("Num of vowels: " + countVowels + " (" 
+    
+         + String.format(Locale.ROOT, "%.2f", countVowels*100.0/strLength) + "%)");
+    
+                 System.out.println("Num of digits: " + countDigits + " (" 
+    
+               + String.format(Locale.ROOT, "%.2f", countDigits*100.0/strLength) + "%)");
+    
+    }
+}

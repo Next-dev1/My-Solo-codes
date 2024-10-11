@@ -1,0 +1,2 @@
+ligma,100,10,0,2,false,false
+Inventory:,Salt

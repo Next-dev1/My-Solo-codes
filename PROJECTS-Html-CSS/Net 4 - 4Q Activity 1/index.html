@@ -1,0 +1,44 @@
+<!-- Events ( onclick onmouseover onmouseout onmousedown onmouseup onload onchange) -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>DOM Events</title>
+	</head>
+	<body onload="alert('Page is loaded')">
+		<h1>Net 4 - 4Q Activity 1</h1>
+		<button onclick="alert('Yes you clicked me')">Click Here</button>
+		<input type="text" onchange="funChange()" />
+
+		<p id="para" onmouseover="funMouseover()" onmouseout="funMouseout()">
+			Hover me OwO
+		</p>
+
+        <p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        The mouseDown() function sets the color of this text to red.
+        The mouseUp() function sets the color of this text to blue.
+        </p>
+        
+        <script>
+        function mouseDown() {
+          document.getElementById("myP").style.color = "red";
+        }
+        
+        function mouseUp() {
+          document.getElementById("myP").style.color = "blue";
+        }
+        </script>
+		<script>
+			function funMouseout() {
+				document.getElementById("para").style.backgroundColor = "green";
+			}
+			function funMouseover() {
+				document.getElementById("para").style.backgroundColor = "cyan";
+			}
+			function funChange() {
+				alert("Something changed");
+			}
+            
+		</script>
+	</body>
+</html>

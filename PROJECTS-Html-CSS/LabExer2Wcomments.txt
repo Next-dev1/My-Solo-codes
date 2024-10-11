@@ -1,0 +1,62 @@
+// Import the Scanner class from the java.util package
+import java.util.Scanner;
+
+// Define a public class named LabExer2
+public class LabExer2{
+   
+   // Declare private instance variables for item name, quantity, price, and amount due
+   private String itemName;
+   private int itemQuantity;
+   private double itemPrice;
+   private double amountDue;
+   
+   // Define a public method named setName() to set the item name
+   public void setName(String newItemName){
+   	itemName = newItemName; // Set the item name to the input value
+   }
+   
+   // Define a public method named setTotalCost() to set the item quantity and price
+   public void setTotalCost(int quantity, double price){
+   	itemQuantity = quantity; // Set the item quantity to the input value
+   	itemPrice = price; // Set the item price to the input value
+   }
+   
+   // Define a public method named getItemName() to get the item name
+   public String getItemName(){
+   	return itemName; // Return the item name
+   }
+   
+   // Define a public method named getTotalCost() to calculate and get the total cost
+   public double getTotalCost(){
+   	amountDue = itemQuantity * itemPrice; // Calculate the total cost by multiplying the quantity and price
+   	return amountDue; // Return the total cost
+   }
+   
+   // Define a public method named readInput() to read input from the user
+   public void readInput(){
+   	Scanner s = new Scanner(System.in); // Create a new Scanner object to read input from the console
+   	
+   	System.out.println("Enter name of item you are purchasing."); // Print a message to the console asking for the item name
+   	itemName = s.nextLine(); // Read the item name from the user input
+   	
+   	System.out.println("Enter the quantity and price separated by space."); // Print a message to the console asking for the item quantity and price
+   	itemQuantity = s.nextInt(); // Read the item quantity from the user input
+   	itemPrice = s.nextDouble(); // Read the item price from the user input
+   	
+   	s.close(); // Close the Scanner object to free up system resources
+   }
+   
+   // Define a public method named writeOutput() to print output to the console
+   public void writeOutput(){
+   	System.out.println("You are purchasing " + itemQuantity + " " + itemName + "(s) at " + itemPrice + " each."); // Print a message to the console with the item details
+   }
+   
+   // Define a public static method named main() to run the program
+   public static void main(String[] args){
+   	LabExer2 lab = new LabExer2(); // Create a new instance of the LabExer2 class
+   	lab.readInput(); // Call the readInput() method to read input from the user
+   	lab.writeOutput(); // Call the writeOutput() method to print output to the console
+   	System.out.println("Amount due is " + lab.getTotalCost()); // Print the total cost to the console by calling the getTotalCost() method
+   }
+   
+}
